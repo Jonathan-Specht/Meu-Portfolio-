@@ -1,0 +1,41 @@
+body{
+  background-image: url('https://cache.techmahindra.com/static/img/trend2.jpg'); 
+  background-size: auto 100vh;  
+  font-family: monospace; 
+  height: 100vh;
+  }
+
+.menu{
+    background-color: DarkTurquoise; 
+}
+
+.menu li{
+  list-style: none;
+  }
+
+.menu ul {
+  display: flex;
+    justify-content: space-around;
+  
+}
+ 
+}
+
+a {
+   text-decoration: none;
+  
+}
+
+a:hover {
+  text-decoration: underline;
+  
+}
+.site-subtitle, 
+.site-title {
+   color: whitesmoke; 
+   text-align: center;
+}
+
+.site-subtitle {
+  font-style: italic;
+}
