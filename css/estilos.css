@@ -1,13 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body{
-  background-image: url('https://cache.techmahindra.com/static/img/trend2.jpg'); 
+  background-image: url('https://image.freepik.com/vetores-gratis/mapa-do-mundo-com-fundo-azul-tecnologia-abstrata_39608-30.jpg'); 
   background-size: auto 100vh;  
-  font-family: monospace; 
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
   height: 100vh;
+  color: white;
+  font-size: 15px;
+  }
+/* se a tela tiver pelo menos 400px vai carregar estes estilos*/
+  @media (min-width: 400px) {
+body {
+  font-size: 18px;
+}
   }
 
+  @media (min-width: 600px) {
+    body {
+      font-size: 20px;
+    }
+      }
+              
+  header {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+      }
 .menu{
-    background-color: DarkTurquoise; 
+    background-color: whitesmoke; 
+    position: fixed;
+    width: 100vw; 
+    top: 0;
+      }
+
+.menu a {
+color: blue;
+padding: 10px 20px;
+display: block;
 }
+
 
 .menu li{
   list-style: none;
@@ -16,10 +52,9 @@ body{
 .menu ul {
   display: flex;
     justify-content: space-around;
-  
-}
  
 }
+
 
 a {
    text-decoration: none;
@@ -34,8 +69,17 @@ a:hover {
 .site-title {
    color: whitesmoke; 
    text-align: center;
-}
+  }
 
+  .site-title {
+    font-size: 2em;
+  }
 .site-subtitle {
   font-style: italic;
+
 }
+.img-portfolio {
+  height: 180px;
+  width: 180px; 
+   }
+
