@@ -7,10 +7,12 @@
 body{
   background-image: url('https://image.freepik.com/vetores-gratis/mapa-do-mundo-com-fundo-azul-tecnologia-abstrata_39608-30.jpg'); 
   background-size: auto 100vh;  
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+  font-family: "roboto";
   height: 100vh;
   color: white;
   font-size: 15px;
+  padding: 2em;
+  
   }
 /* se a tela tiver pelo menos 400px vai carregar estes estilos*/
   @media (min-width: 400px) {
@@ -30,13 +32,16 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    
       }
 .menu{
     background-color: whitesmoke; 
     position: fixed;
     width: 100vw; 
     top: 0;
-      }
+  
+    
+  }
 
 .menu a {
 color: blue;
@@ -47,19 +52,17 @@ display: block;
 
 .menu li{
   list-style: none;
+  
   }
 
 .menu ul {
   display: flex;
     justify-content: space-around;
- 
-}
-
+ }
 
 a {
    text-decoration: none;
-  
-}
+ }
 
 a:hover {
   text-decoration: underline;
@@ -69,17 +72,54 @@ a:hover {
 .site-title {
    color: whitesmoke; 
    text-align: center;
-  }
+    }
 
   .site-title {
     font-size: 2em;
-  }
+    font-family: 'Permanent Marker', cursive;
+    line-height: 1,8em;
+     }
+ 
+      
 .site-subtitle {
-  font-style: italic;
-
+  font-family: 'Permanent Marker', cursive;
 }
+
 .img-portfolio {
   height: 180px;
-  width: 180px; 
+  width: 270px; 
+  object-fit: left;
+  border-radius: 15px;
+     }
+  
+.Portfolio {
+  padding: 1.5em;
+  margin-bottom: 1.5em;
+  font-size: 1,5em;
+  text-align: center;
    }
+
+  .Portfolio .grid {
+gap: 1.5em;
+display: grid;
+ }
+  
+ @media (min-width: 640px){
+  .Portfolio .grid {
+grid-template-columns: 260px 260px;
+ }
+}
+
+@media (min-width: 960px){
+  .Portfolio .grid {
+grid-template-columns: 260px 260px 260px;
+justify-content: center;
+align-content: center;
+ }
+}
+
+.Portfolio figure{
+  text-align: center;
+    }
+
 
