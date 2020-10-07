@@ -34,21 +34,41 @@ body {
     align-items: center;
     
       }
-.menu{
+
+   .menu{
     background-color: whitesmoke; 
     position: fixed;
     width: 100vw; 
     top: 0;
+    z-index: 1;
   
     
+    }
+
+.titulo {
+  transform: scale(0.2) translateY(50vh); 
+  opacity: 2;
+  animation: 500ms linear 500ms animacaotitulo forwards; 
+}
+
+@keyframes animacaotitulo {
+  100% {
+  transform: scale(1) translateY(0); 
+  opacity: 1;
   }
+}
+
 
 .menu a {
 color: blue;
 padding: 10px 20px;
 display: block;
+transition: background-color 1s, color 1s;
 }
 
+.menu a:hover {
+   background-color: black
+  }
 
 .menu li{
   list-style: none;
@@ -66,6 +86,7 @@ a {
 
 a:hover {
   text-decoration: underline;
+  color: blueviolet
   
 }
 .site-subtitle, 
@@ -90,14 +111,20 @@ a:hover {
   width: 270px; 
   object-fit: left;
   border-radius: 15px;
-     }
-  
+ transition: transform 500ms;
+  }
+
+ .img-portfolio:hover {
+ transform: scale(1.07);
+ }   
+
+    
 .Portfolio {
   padding: 1.5em;
   margin-bottom: 1.5em;
   font-size: 1,5em;
   text-align: center;
-   }
+      }
 
   .Portfolio .grid {
 gap: 1.5em;
@@ -121,5 +148,24 @@ align-content: center;
 .Portfolio figure{
   text-align: center;
     }
+   
+    
+.contato {
+  padding: 1.5em;
+  margin-bottom: 1.5em;
+  text-align: center;
+  font-size: 1,5em;
+      }
+    
+.contato a {
+  color: whitesmoke;
+  font-size: 4.5em;
+  transition: text-shadow 1s;
+    }
 
-
+.contato a:active,    
+.contato a:hover {
+      text-decoration: none;
+      text-shadow: 0px 0px 8px limegreen;
+    }
+       
