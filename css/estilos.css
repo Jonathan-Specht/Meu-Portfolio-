@@ -169,3 +169,37 @@ align-content: center;
       text-shadow: 0px 0px 8px limegreen;
     }
        
+    .sobre {
+      padding: 2em;
+      min-:100vh;
+      font-family: roboto;
+      text-align: justify;
+      margin-bottom: 1.4em;
+      
+    }
+    .sobre h2 {
+      font-family: roboto;
+      color: whitesmoke;
+      margin-bottom: 1,5em;
+      font-size: 2m;
+      border-radius: 15px;
+    }
+
+    @media (min-width: 1200px) {
+      .sobre,
+      .contato,
+      .portfolio {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    .perfil {
+      border-radius: 15px;  
+      clip-path: polygon(0% 0%, 100% 0%, 100% 86%, 54% 89%, 75% 100%, 32% 89%, 0 82%);
+            }
+      .perfil:hover {
+        transform: scale(1.03);
+         
+      }
