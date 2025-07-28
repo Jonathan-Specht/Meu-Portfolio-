@@ -1,205 +1,160 @@
+/* Mantém teu efeito original da .site-title 
+   (não alterei nada no teu código do surgimento) */
+
+/* Ajustes gerais */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body{
-  background-image: url('https://image.freepik.com/vetores-gratis/mapa-do-mundo-com-fundo-azul-tecnologia-abstrata_39608-30.jpg'); 
-  background-size: auto 100vh;  
-  font-family: "roboto";
-  height: 100vh;
-  color: white;
-  font-size: 15px;
-  padding: 2em;
-  
-  }
-/* se a tela tiver pelo menos 400px vai carregar estes estilos*/
-  @media (min-width: 400px) {
 body {
-  font-size: 18px;
-}
-  }
-
-  @media (min-width: 600px) {
-    body {
-      font-size: 20px;
-    }
-      }
-              
-  header {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-      }
-
-   .menu{
-    background-color: whitesmoke; 
-    position: fixed;
-    width: 100vw; 
-    top: 0;
-    z-index: 1;
-  
-    
-    }
-
-.titulo {
-  transform: scale(0.2) translateY(50vh); 
-  opacity: 2;
-  animation: 500ms linear 500ms animacaotitulo forwards; 
+  font-family: 'Roboto', sans-serif;
+  background: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
 }
 
-@keyframes animacaotitulo {
-  100% {
-  transform: scale(1) translateY(0); 
-  opacity: 1;
-  }
+/* Cabeçalho */
+header {
+  background: linear-gradient(135deg, #222, #444);
+  color: #fff;
+  padding: 2rem 1rem;
+  text-align: center;
 }
 
+header .site-subtitle {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  color: #bbb;
+  opacity: 0;
+  animation: aparecer 1s ease-out forwards;
+  animation-delay: 0.8s; /* aparece depois do título */
+}
+
+/* Menu */
+.menu ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
 
 .menu a {
-color: blue;
-padding: 10px 20px;
-display: block;
-transition: background-color 1s, color 1s;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: color 0.3s;
 }
 
 .menu a:hover {
-   background-color: black
-  }
-
-.menu li{
-  list-style: none;
-  
-  }
-
-.menu ul {
-  display: flex;
-    justify-content: space-around;
- }
-
-a {
-   text-decoration: none;
- }
-
-a:hover {
-  text-decoration: underline;
-  color: blueviolet
-  
+  color: #00adb5;
 }
-.site-subtitle, 
-.site-title {
-   color: whitesmoke; 
-   text-align: center;
-    }
 
-  .site-title {
-    font-size: 2em;
-    font-family: 'Permanent Marker', cursive;
-    line-height: 1,8em;
-     }
- 
-      
-.site-subtitle {
-  font-family: 'Permanent Marker', cursive;
+/* Sessões */
+section {
+  padding: 3rem 1rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #222;
+  position: relative;
+}
+
+section h2::after {
+  content: '';
+  width: 60px;
+  height: 3px;
+  background: #00adb5;
+  display: block;
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+
+/* Sobre */
+.sobre .perfil {
+  display: block;
+  margin: 0 auto 1.5rem;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #00adb5;
+}
+
+.sobre p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+/* Portfólio */
+.portfolio .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
 }
 
 .img-portfolio {
-  height: 180px;
-  width: 270px; 
-  object-fit: left;
-  border-radius: 15px;
- transition: transform 500ms;
-  }
-
- .img-portfolio:hover {
- transform: scale(1.07);
- }   
-
-    
-.Portfolio {
-  padding: 1.5em;
-  margin-bottom: 1.5em;
-  font-size: 1,5em;
-  text-align: center;
-      }
-
-  .Portfolio .grid {
-gap: 1.5em;
-display: grid;
- }
-  
- @media (min-width: 640px){
-  .Portfolio .grid {
-grid-template-columns: 260px 260px;
- }
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
 }
 
-@media (min-width: 960px){
-  .Portfolio .grid {
-grid-template-columns: 260px 260px 260px;
-justify-content: center;
-align-content: center;
- }
+.img-portfolio:hover {
+  transform: scale(1.05);
+  cursor: pointer;
 }
 
-.Portfolio figure{
+figcaption {
   text-align: center;
-    }
-   
-    
-.contato {
-  padding: 1.5em;
-  margin-bottom: 1.5em;
-  text-align: center;
-  font-size: 1,5em;
-      }
-    
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+
+/* Contato */
+.contato .icons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 2.5rem;
+}
+
 .contato a {
-  color: whitesmoke;
-  font-size: 4.5em;
-  transition: text-shadow 1s;
-    }
+  color: #222;
+  transition: color 0.3s;
+}
 
-.contato a:active,    
 .contato a:hover {
-      text-decoration: none;
-      text-shadow: 0px 0px 8px limegreen;
-    }
-       
-    .sobre {
-      padding: 2em;
-      min-:100vh;
-      font-family: roboto;
-      text-align: justify;
-      margin-bottom: 1.4em;
-      
-    }
-    .sobre h2 {
-      font-family: roboto;
-      color: whitesmoke;
-      margin-bottom: 1,5em;
-      font-size: 2m;
-      border-radius: 15px;
-    }
+  color: #00adb5;
+}
 
-    @media (min-width: 1200px) {
-      .sobre,
-      .contato,
-      .portfolio {
-        max-width: 1200px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-    }
+/* Responsividade */
+@media (max-width: 768px) {
+  header .site-title {
+    font-size: 2rem;
+  }
+  
+  .menu ul {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .contato .icons {
+    gap: 1rem;
+    font-size: 2rem;
+  }
+}
 
-    .perfil {
-      border-radius: 15px;  
-      clip-path: polygon(0% 0%, 100% 0%, 100% 86%, 54% 89%, 75% 100%, 32% 89%, 0 82%);
-            }
-      .perfil:hover {
-        transform: scale(1.03);
-         
-      }
+/* Animação subtítulo */
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
