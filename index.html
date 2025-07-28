@@ -1,88 +1,165 @@
-<!DOCTYPE html>
-<html lang="en">
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jonathan Specht</title>
-  <link rel="stylesheet" href="./css/estilos.css">
-  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Press+Start+2P&family=Roboto&display=swap" rel="stylesheet">
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Cabeçalho */
+header {
+  background: linear-gradient(135deg, #222, #444);
+  color: #fff;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+/* Título principal (mantém teu efeito original de surgir) */
+.site-title {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 2.5rem;
+  color: white;
+  /* Aqui fica o teu efeito original de animação */
+}
+
+/* Subtítulo — aparece depois do título */
+.site-subtitle {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  color: #bbb;
+  opacity: 0;
+  animation: aparecer 1s ease-out forwards;
+  animation-delay: 0.8s;
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Menu */
+.menu ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.menu a:hover {
+  color: #00adb5;
+}
+
+/* Sessões */
+section {
+  padding: 3rem 1rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #222;
+  position: relative;
+}
+
+section h2::after {
+  content: '';
+  width: 60px;
+  height: 3px;
+  background: #00adb5;
+  display: block;
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+
+/* Sobre */
+.sobre .perfil {
+  display: block;
+  margin: 0 auto 1.5rem;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #00adb5;
+}
+
+.sobre p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+/* Portfólio */
+.portfolio .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.img-portfolio {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.img-portfolio:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+figcaption {
+  text-align: center;
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+
+/* Contato */
+.contato .icons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 2.5rem;
+}
+
+.contato a {
+  color: #222;
+  transition: color 0.3s;
+}
+
+.contato a:hover {
+  color: #00adb5;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  header .site-title {
+    font-size: 2rem;
+  }
   
-  <!-- FontAwesome via CDN -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-
-<body>
-  <header>
-    <nav class="menu">
-      <ul>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#portfolio">Portfólio</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul> 
-    </nav>
-    <div class="titulo">
-      <h1 class="site-title">Jonathan Specht</h1>
-      <h2 class="site-subtitle">web developer</h2>
-    </div>
-  </header>
-
-  <section class="sobre" id="sobre">
-    <h2>Sobre</h2>
-    <figure>
-      <img class="perfil" src="./img/foto-de-perfil.jpg" alt="Jonathan Specht">
-    </figure>
-    <p>
-      Gaúcho, formado em Ciências Contábeis pela Universidade de Passo Fundo desde 2010. Entusiasta tecnológico, da cultura nerd e gastronomia. 
-      Sou dono do perfil "Alecrim e Tomilho" no Instagram onde dou dicas de receitas e também do perfil Tiamat_Games na Twitch dedicado ao mundo dos games. 
-    </p> 
-    <p>
-      Atualmente estudo programação por conta própria com foco em Javascript, HTML e CSS. Este site foi o primeiro que desenvolvi no ano de 2020 durante a Imersão CSS da Alura.
-    </p>
-  </section>
-
-  <section class="portfolio" id="portfolio">
-    <h2>Portfólio</h2>
-    <div class="grid">
-      <figure>
-        <img class="img-portfolio" src="./img/ecommerce-creditos-s-o-c-i-a-l-c-u-t-unsplash.jpg" alt="eCommerce">
-        <figcaption>eCommerce</figcaption>
-      </figure>
-      <figure>
-        <img class="img-portfolio" src="./img/mobile.jpg" alt="Mobile">
-        <figcaption>Mobile</figcaption>
-      </figure>
-      <figure>
-        <img class="img-portfolio" src="./img/webdesign.jpg" alt="Web design">
-        <figcaption>Web design</figcaption>
-      </figure>
-      <figure>
-        <img class="img-portfolio" src="./img/projpessoais.jpg" alt="Projetos pessoais">
-        <figcaption>Projetos pessoais</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <section class="contato" id="contato">
-    <h2>Contato</h2>
-    <div class="grid icons">
-      <a href="https://github.com/Jonathan-Specht" target="_blank">
-        <i class="fab fa-github fa-3x"></i>
-      </a>
-      <a href="https://twitter.com/H3LLoPeople" target="_blank">
-        <i class="fab fa-twitter fa-3x"></i>
-      </a>
-      <a href="mailto:jonny.specht@gmail.com">
-        <i class="fas fa-envelope fa-3x"></i>
-      </a>
-      <a href="https://www.instagram.com/alecrim_e_tomilho" target="_blank">
-        <i class="fab fa-instagram fa-3x"></i>
-      </a>
-      <a href="https://www.twitch.tv/tiamat_games" target="_blank">
-        <i class="fab fa-twitch fa-3x"></i>
-      </a>
-    </div>
-  </section>
-</body>
-
-</html>
+  .menu ul {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .contato .icons {
+    gap: 1rem;
+    font-size: 2rem;
+  }
+}
