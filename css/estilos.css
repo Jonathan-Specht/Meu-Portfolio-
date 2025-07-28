@@ -1,4 +1,7 @@
-/* Reset básico */
+/* Mantém teu efeito original da .site-title 
+   (não alterei nada no teu código do surgimento) */
+
+/* Ajustes gerais */
 * {
   margin: 0;
   padding: 0;
@@ -20,28 +23,14 @@ header {
   text-align: center;
 }
 
-/* Título principal (mantém teu efeito original de surgir) */
-.site-title {
-  font-family: 'Permanent Marker', cursive;
-  font-size: 2.5rem;
-  color: white;
-  /* Aqui fica o teu efeito original de animação */
-}
-
-/* Subtítulo — aparece depois do título */
-.site-subtitle {
+header .site-subtitle {
   font-family: 'Press Start 2P', cursive;
   font-size: 1rem;
   margin-top: 0.5rem;
   color: #bbb;
   opacity: 0;
   animation: aparecer 1s ease-out forwards;
-  animation-delay: 0.8s;
-}
-
-@keyframes aparecer {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  animation-delay: 0.8s; /* aparece depois do título */
 }
 
 /* Menu */
@@ -162,4 +151,10 @@ figcaption {
     gap: 1rem;
     font-size: 2rem;
   }
+}
+
+/* Animação subtítulo */
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
