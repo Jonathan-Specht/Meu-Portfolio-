@@ -1,6 +1,116 @@
 * {
   margin: 0;
+  paddbody {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background: url('./img/fundo.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+}
+
+.menu ul {
+  list-style: none;
   padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.menu ul li a:hover {
+  color: #1da1f2;
+}
+
+.titulo {
+  margin-top: 20px;
+}
+
+.site-title {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 3em;
+  animation: aparecer 2s ease forwards;
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: scale(0.5); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.site-subtitle {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+
+.sobre {
+  padding: 50px;
+  text-align: center;
+}
+
+.sobre img.perfil {
+  width: 200px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.Portfolio {
+  padding: 50px;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+.img-portfolio {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.img-portfolio:hover {
+  transform: scale(1.05);
+}
+
+.contato {
+  padding: 50px;
+  text-align: center;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.icons svg {
+  width: 40px;
+  height: 40px;
+  fill: white;
+  cursor: pointer;
+  transition: transform 0.3s ease, fill 0.3s ease;
+}
+
+.icons svg:hover {
+  transform: scale(1.2);
+  fill: #1da1f2;
+}ing: 0;
   box-sizing: border-box;
 }
 
